@@ -2,7 +2,7 @@
 
 # Farm Management React App - Developer Readme
 
-Welcome, developer! We're excited to have you work on building the Farm Management React App. This application aims to provide a simple solution for managing salary payments to workers and recording daily milk production on the farm. The app will be written in TypeScript, and we will be using local arrays to simulate a database.
+Welcome, developer! We're excited to have you work on building the Farm Management React App(la_ferme). This application aims to provide a simple solution for managing salary payments to workers and recording daily milk production on the farm. The app will be written in TypeScript, and we will be using local arrays to simulate a database.
 
 ## Prerequisites
 
@@ -19,13 +19,13 @@ To start developing the Farm Management React App, follow the steps below:
 2. Clone the repository: Use the following command to clone the forked repository to your local machine:
 
 ```bash
-git clone https://github.com/your-username/farm-management-react-app.git
+[git clone https://github.com/your-username/farm-management-react-app.git](https://github.com/UsanaseD/la_ferme.git)
 ```
 
 3. Navigate to the project directory:
 
 ```bash
-cd farm-management-react-app
+cd la_ferme
 ```
 
 4. Install dependencies: Use npm to install the required dependencies for the project.
@@ -112,4 +112,4 @@ Feel free to reach out if you have any questions or need clarifications on the r
 
 ---
 
-Note: The above readme file serves as a guide for the developer and might need to be accompanied by the actual codebase for the React app to make complete sense. Remember that this is just a template, and the actual implementation details and app structure will depend on the developer's preferences and the project's requirements.
+Note: the logo is in assets folder in case you need it, also, remember this is a UI offer, so we espect your most outstanding UI.
