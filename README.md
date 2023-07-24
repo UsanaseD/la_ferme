@@ -94,6 +94,10 @@ Create the necessary components and forms to add and display milk production inf
 
 As mentioned earlier, we will use local arrays to act as a database. You can find a utility file `database.ts` inside the `utils` directory. Use this file to define and manage the arrays for storing salary payment and milk production data.
 
+## Bonus
+
+As a bonus you can add login form for users to get into their acounts
+
 ## TypeScript
 
 Ensure that the entire project is written in TypeScript. Utilize type definitions to maintain type safety throughout the application.
