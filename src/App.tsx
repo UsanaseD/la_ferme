@@ -5,7 +5,6 @@ import LoginForm from './components/LoginForm';
 import SalaryPaymentTable from './components/MainBody';
 
 const App = () => {
-  const loggedInStatus = localStorage.getItem('loggedInUser');
 
   return (
     <Router>

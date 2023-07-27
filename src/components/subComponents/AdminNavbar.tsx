@@ -3,6 +3,7 @@ import farmerIcons from '../../assets/farmer_icons.png'
 import milkCow from '../../assets/milk_cow.jpg'
 import production from '../../assets/production.jpg'
 import { FarmersArray } from "../../types/WorkerType";
+import { AiOutlineLogout } from 'react-icons/ai';
 
 import { useNavigate } from "react-router-dom";
 
@@ -27,7 +28,7 @@ const AdminNavbar:React.FC<Props> = ({ farmers, setFarmers }) => {
     return (
         <div className="header">
             <div className='signUp'>
-                <button onClick={handleLogout}>Sign Out</button>
+                <button onClick={handleLogout}> Sign Out <AiOutlineLogout /></button>
             </div>
             <div className='card'>
                 <div className="user-card">

@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useNavigate } from "react-router-dom";
 import AdminNavbar from './subComponents/AdminNavbar';
 import PaymentTable from './PaymentTable';
 import ExtractingTable from './ExtractingTable'; 
@@ -10,8 +11,17 @@ import { FarmersArray } from "../types/WorkerType";
 import { MilksArray } from "../types/MilkProductionType";
 
 const SalaryPaymentList: React.FC = () => {
+  const navigate = useNavigate();
+
   const [farmers, setFarmers] = useState<FarmersArray>([]);
   const [milks, setMilks] = useState<MilksArray>([]);
+
+  useEffect(() => {
+    const loggedInStatus = localStorage.getItem('loggedInUser');
+    if (!loggedInStatus) {
+      navigate("/");
+    }
+  }, []);
 
   const [activeTab, setActiveTab] = useState(1);
 
