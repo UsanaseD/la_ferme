@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 const LoginForm = () => {
@@ -17,6 +17,13 @@ const LoginForm = () => {
     }
     return token;
   }
+
+  useEffect(() => {
+    const loggedInStatus = localStorage.getItem('loggedInUser');
+    if (loggedInStatus) {
+      navigate("/la_ferme");
+    }
+  }, [])
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();

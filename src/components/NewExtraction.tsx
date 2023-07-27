@@ -37,14 +37,11 @@ const NewExtraction: React.FC<Props> = ({ milks, setMilks }) => {
     console.log(milks)
 
     setMilks(prev => [...prev, newMilk]);
-    
-    // setId(milks.length + 1);
-    // setName('');
-    // setSurname('');
-    // setSalary('');
-    // setBalanceTime('');
-    // alert("Form submited")
-    // navigate("/SalaryPaymentList");
+    setDateProd('');
+    setQuantity(0);
+    setDescription('');
+    alert("New Production has been made")
+    navigate("/SalaryPaymentList");
   }
 
   return (

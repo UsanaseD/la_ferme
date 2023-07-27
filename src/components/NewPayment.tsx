@@ -35,12 +35,12 @@ const NewPayment: React.FC<Props> = ({ farmers, setFarmers }) => {
     console.log(farmers);
     
     setId(farmers.length + 1);
-    // setName('');
-    // setSurname('');
-    // setSalary('');
-    // setBalanceTime('');
-    // alert("Form submited")
-    // navigate("/SalaryPaymentList");
+    setName('');
+    setSurname('');
+    setSalary('');
+    setBalanceTime('');
+    alert("New Payment has been done")
+    navigate("/la_ferme");
   }
 
   return (
