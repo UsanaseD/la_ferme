@@ -41,7 +41,7 @@ const NewExtraction: React.FC<Props> = ({ milks, setMilks }) => {
     setQuantity(0);
     setDescription('');
     alert("New Production has been made")
-    navigate("/SalaryPaymentList");
+    navigate("/");
   }
 
   return (
