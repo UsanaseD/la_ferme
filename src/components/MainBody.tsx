@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useLocation } from "react-router-dom";
-import AdminNavbar from './AdminNavbar';
 import PaymentTable from '../screens/PaymentTable';
 import ExtractingTable from '../screens/ExtractingTable'; 
 import NewPayment from '../screens/NewPayment';
@@ -42,54 +41,34 @@ const SalaryPaymentList: React.FC = () => {
     setDiv1Visiblescd(!isDiv1Visiblescd);
   }; 
 
-  return (
-    <div>
-      <aside className="sidebar">
-        <nav>
-            <a href="#" className="logo">La Ferme</a>
-            <div className="nav_items">
-                <a onClick={() => handleTabClick(1)} className={activeTab === 1 || activeTab === 3 ? 'active' : ''} >
-                  <GiPayMoney size={27} /> Payments {isDiv1Visible ? <BiChevronDown size={25} /> : <BiChevronUp size={25} /> }
+  return ( 
+    <aside className="sidebar">
+      <nav>
+          <a href="#" className="logo">La Ferme</a>
+          <div className="nav_items">
+              <div id="link">
+                <a href="/dashboard" >
+                  <GiPayMoney size={27} /> Payments
                 </a>
-                {isDiv1Visible && (
-                  <a onClick={() => handleTabClick(3)} className={activeTab === 3 ? 'activeDrop' : 'notActive'} >
-                    <BiMoneyWithdraw size={22} /> New Payroll
-                  </a>
-                )}
-                <a onClick={() => handleTabClickscd(2)} className={activeTab === 2 ? 'active' : ''} >
-                  <GiMilkCarton size={25} /> Extraction {isDiv1Visiblescd ? <BiChevronDown size={25} /> : <BiChevronUp size={25} /> }
+                <div className='icnMore' onClick={() => handleTabClick(1)} >{isDiv1Visible ? <BiChevronDown size={25} /> : <BiChevronUp size={25} /> }</div>
+              </div>
+              {isDiv1Visible && (
+                <a href="/new-payment" >
+                  <BiMoneyWithdraw size={22} /> New Payroll
                 </a>
-                {isDiv1Visiblescd && (
-                  <a onClick={() => handleTabClickscd(4)} className={activeTab === 4 ? 'activeDrop' : 'notActive'} >
-                    <GiCow size={33} /> New Extraction
-                  </a>
-                )}
-            </div>
-        </nav>
-      </aside>
-      <div className="mainBlock">
-        <div className='details-body'>
-        <AdminNavbar farmers={farmers} setFarmers={setFarmers} />
-        
-          {activeTab === 1 &&  <div className='downBlock'>
-            <h1>Farmers Payment</h1>
-            <PaymentTable  farmers={farmers} />
-          </div>}
-          {activeTab === 2 && <div className='downBlock'>
-            <h1>Milk Extraction's data</h1>
-            <ExtractingTable milks={milks} />
-          </div>}
-          {activeTab === 3 && <div className='downBlock'>
-            <h1>New Payment</h1>
-            <NewPayment farmers={farmers} setFarmers={setFarmers} />
-          </div>}
-          {activeTab === 4 && <div className='downBlock'>
-            <h1>Milk Extraction</h1>
-            <NewExtraction milks={milks} setMilks={setMilks} />
-          </div>}
+              )}
+              
+              <a className={activeTab === 2 ? 'active' : ''} >
+                <GiMilkCarton size={25} /> Extraction <div className='icnMore' onClick={() => handleTabClickscd(2)} >{isDiv1Visible ? <BiChevronDown size={25} /> : <BiChevronUp size={25} /> }</div>
+              </a>
+              {isDiv1Visiblescd && (
+                <a onClick={() => handleTabClickscd(4)} className={activeTab === 4 ? 'activeDrop' : 'notActive'} >
+                  <GiCow size={33} /> New Extraction
+                </a>
+              )}
           </div>
-        </div>
-    </div>
+      </nav>
+    </aside>
   );
 };
 
