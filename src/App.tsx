@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
-import LoginForm from './components/LoginForm';
-import SalaryPaymentTable from './components/MainBody';
+import LoginForm from './routes/LoginForm';
+import Dashboard from './components/MainBody';
 
 const App = () => {
 
@@ -10,7 +10,7 @@ const App = () => {
     <Router>
         <Routes>
           <Route path="/" element={<LoginForm />} />
-          <Route path="/La_ferme" element={<SalaryPaymentTable />} />
+          <Route path="/dashboard" element={<Dashboard />} />
         </Routes>
     </Router>
   );

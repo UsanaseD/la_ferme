@@ -1,20 +1,24 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from "react-router-dom";
-import AdminNavbar from './subComponents/AdminNavbar';
-import PaymentTable from './PaymentTable';
-import ExtractingTable from './ExtractingTable'; 
-import NewPayment from './NewPayment';
-import NewExtraction from './NewExtraction';
+import { useNavigate, useLocation } from "react-router-dom";
+import AdminNavbar from './AdminNavbar';
+import PaymentTable from '../screens/PaymentTable';
+import ExtractingTable from '../screens/ExtractingTable'; 
+import NewPayment from '../screens/NewPayment';
+import NewExtraction from '../screens/NewExtraction';
 import { GiPayMoney, GiMilkCarton, GiCow } from 'react-icons/gi';
+import { BiChevronDown, BiChevronUp } from 'react-icons/bi';
 import { BiMoneyWithdraw } from 'react-icons/bi';
 import { FarmersArray } from "../types/WorkerType";
 import { MilksArray } from "../types/MilkProductionType";
 
 const SalaryPaymentList: React.FC = () => {
   const navigate = useNavigate();
+  const location = useLocation();
 
   const [farmers, setFarmers] = useState<FarmersArray>([]);
   const [milks, setMilks] = useState<MilksArray>([]);
+  const [isDiv1Visible, setDiv1Visible] = useState(false);
+  const [isDiv1Visiblescd, setDiv1Visiblescd] = useState(false);
 
   useEffect(() => {
     const loggedInStatus = localStorage.getItem('loggedInUser');
@@ -23,26 +27,43 @@ const SalaryPaymentList: React.FC = () => {
     }
   }, []);
 
+  useEffect(() => {
+    document.title = "Dashboard | XFarmer";
+  }, [location]);
+
   const [activeTab, setActiveTab] = useState(1);
 
   const handleTabClick = (tabNumber: number) => {
       setActiveTab(tabNumber);
+      setDiv1Visible(!isDiv1Visible);
   };
+  const handleTabClickscd = (tabNumber: number) => {
+    setActiveTab(tabNumber);
+    setDiv1Visiblescd(!isDiv1Visiblescd);
+  }; 
 
   return (
     <div>
       <aside className="sidebar">
         <nav>
-            <a href="#" className="logo">XFarmer</a>
+            <a href="#" className="logo">La Ferme</a>
             <div className="nav_items">
-                <a onClick={() => handleTabClick(1)} className={activeTab === 1 ? 'active' : ''} href="#">
-                  <GiPayMoney size={27} /> Payments Data</a>
-                <a onClick={() => handleTabClick(2)} className={activeTab === 2 ? 'active' : ''} href="#">
-                  <GiMilkCarton size={25} /> Milk Extraction</a>
-                <a onClick={() => handleTabClick(3)} className={activeTab === 3 ? 'active' : ''} href="#">
-                  <BiMoneyWithdraw size={22} /> New Payroll</a>
-                <a onClick={() => handleTabClick(4)} className={activeTab === 4 ? 'active' : ''} href="#">
-                  <GiCow size={33} /> New Extraction</a>
+                <a onClick={() => handleTabClick(1)} className={activeTab === 1 || activeTab === 3 ? 'active' : ''} >
+                  <GiPayMoney size={27} /> Payments {isDiv1Visible ? <BiChevronDown size={25} /> : <BiChevronUp size={25} /> }
+                </a>
+                {isDiv1Visible && (
+                  <a onClick={() => handleTabClick(3)} className={activeTab === 3 ? 'activeDrop' : 'notActive'} >
+                    <BiMoneyWithdraw size={22} /> New Payroll
+                  </a>
+                )}
+                <a onClick={() => handleTabClickscd(2)} className={activeTab === 2 ? 'active' : ''} >
+                  <GiMilkCarton size={25} /> Extraction {isDiv1Visiblescd ? <BiChevronDown size={25} /> : <BiChevronUp size={25} /> }
+                </a>
+                {isDiv1Visiblescd && (
+                  <a onClick={() => handleTabClickscd(4)} className={activeTab === 4 ? 'activeDrop' : 'notActive'} >
+                    <GiCow size={33} /> New Extraction
+                  </a>
+                )}
             </div>
         </nav>
       </aside>
