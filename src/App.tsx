@@ -4,26 +4,20 @@ import './App.css';
 import LoginForm from './routes/LoginForm';
 import Dashboard from './routes/Dashboard';
 import NewPayment from './routes/NewPayment';
-import { farmers } from "./utils/database";
-// import { MilksArray } from "./types/MilkProductionType";
-
-// import Payments from './components/MainBody';
-// import NewPayments from './components/MainBody';
-// import Extractions from './components/MainBody';
-// import NewExtractions from './components/MainBody';
+import ExtractionDash from './routes/ExtractionDash';
+import NewExtraction from './routes/NewExtraction';
+import { farmers, milks } from "./utils/database"; 
 
 const App = () => {
-
   return (
     <Router>
-        <Routes>
-          <Route path="/" element={<LoginForm />} />
-          <Route path="/dashboard" element={<Dashboard farmers={farmers} />} /> 
-
-          <Route path="/new-payment" element={<NewPayment />} />
-          {/* <Route path="/extractions" element={<Dashboard />} /> */}
-          {/* <Route path="/new-extraction" element={<Dashboard />} /> */}
-        </Routes>
+      <Routes>
+        <Route path="/" element={<LoginForm />} />
+        <Route path="/dashboard" element={<Dashboard farmers={farmers} />} /> 
+        <Route path="/new-payment" element={<NewPayment farmers={farmers} />} />
+        <Route path="/extractions" element={<ExtractionDash farmers={farmers} milks={milks} />} />
+        <Route path="/new-extraction" element={<NewExtraction farmers={farmers} milks={milks} />} />
+      </Routes>
     </Router>
   );
 }

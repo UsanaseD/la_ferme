@@ -8,44 +8,45 @@ type Props = {
 };
 
 const NewPayment: React.FC<Props> = ({ farmers, setFarmers }) => {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   
-  const [id, setId] = useState(farmers.length + 1)
-  const [name, setName] = useState('');
-  const [surname, setSurname] = useState('');
-  const [salary, setSalary] = useState('');
-  const [workerType, setWorkerType] = useState<'casual' | 'monthly'>('casual');
-  const [balanceTime, setBalanceTime] = useState('');
+  // const [id, setId] = useState(farmers.length + 1)
+  // const [name, setName] = useState('');
+  // const [surname, setSurname] = useState('');
+  // const [salary, setSalary] = useState('');
+  // const [workerType, setWorkerType] = useState<'casual' | 'monthly'>('casual');
+  // const [balanceTime, setBalanceTime] = useState('');
 
-  const handleFormSubmit = (event: React.FormEvent) => {
-    event.preventDefault();
-    const salaryNumber = Number(salary);
+  // const handleFormSubmit = (event: React.FormEvent) => {
+  //   event.preventDefault();
+  //   const salaryNumber = Number(salary);
 
-    const newFarmer = {
-      id,
-      name,
-      surname,
-      salary: salaryNumber,
-      timeRecorded: new Date().toISOString(), 
-      workerType,
-      balanceTime: balanceTime || null,
-    };
+  //   const newFarmer = {
+  //     id,
+  //     name,
+  //     surname,
+  //     salary: salaryNumber,
+  //     timeRecorded: new Date().toISOString(),
+  //     workerType,
+  //     balanceTime: balanceTime || null,
+  //   };
 
-    setFarmers((prev) => [...prev, newFarmer])
-    console.log(farmers);
+  //   setFarmers((prev) => [...prev, newFarmer])
+  //   console.log(farmers);
     
-    setId(farmers.length + 1);
-    setName('');
-    setSurname('');
-    setSalary('');
-    setBalanceTime('');
-    alert("New Payment has been done")
-    navigate("/la_ferme");
-  }
+  //   setId(farmers.length + 1);
+  //   setName('');
+  //   setSurname('');
+  //   setSalary('');
+  //   setBalanceTime('');
+  //   alert("New Payment has been done")
+  //   navigate("/la_ferme");
+  // }
 
   return (
     <div className='data'>
-      <div className="form-content">
+      <p>Lorem </p>
+      {/* <div className="form-content">
         <form onSubmit={handleFormSubmit}>
           <div className="names">
             <div>
@@ -117,7 +118,7 @@ const NewPayment: React.FC<Props> = ({ farmers, setFarmers }) => {
             <button type="submit">Make a Payement</button> 
           </div> 
         </form>
-      </div>
+      </div> */}
     </div>
   );
 };

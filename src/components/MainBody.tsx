@@ -58,11 +58,11 @@ const SalaryPaymentList: React.FC = () => {
                 </a>
               )}
               
-              <a className={activeTab === 2 ? 'active' : ''} >
+              <a href="/extractions" className={activeTab === 2 ? 'active' : ''} >
                 <GiMilkCarton size={25} /> Extraction <div className='icnMore' onClick={() => handleTabClickscd(2)} >{isDiv1Visible ? <BiChevronDown size={25} /> : <BiChevronUp size={25} /> }</div>
               </a>
               {isDiv1Visiblescd && (
-                <a onClick={() => handleTabClickscd(4)} className={activeTab === 4 ? 'activeDrop' : 'notActive'} >
+                <a href="/new-extraction" onClick={() => handleTabClickscd(4)} className={activeTab === 4 ? 'activeDrop' : 'notActive'} >
                   <GiCow size={33} /> New Extraction
                 </a>
               )}

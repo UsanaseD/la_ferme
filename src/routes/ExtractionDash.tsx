@@ -3,14 +3,17 @@ import AdminNavbar from '../components/AdminNavbar';
 import MainBody from '../components/MainBody';
 import { FarmersArray } from "../types/WorkerType";
 import { MilksArray } from "../types/MilkProductionType";
+import ExtractingTable from '../screens/ExtractingTable';
+import { farmers, milks } from '../utils/database';
 
 type Props = {
     farmers: FarmersArray;
-};
+    milks: MilksArray;
+}; 
 
-const NewPayment: React.FC<Props> = ({ farmers }) => {
+const ExtractionDash: React.FC<Props> = ({ milks, farmers }) => {
     const [localFarmers, setLocalFarmers] = useState<FarmersArray>([]);
-    // const [milks, setMilks] = useState<MilksArray>([]);
+    const [localmilks, setLocalMilks] = useState<MilksArray>([]);
 
   return (
     <div>
@@ -18,11 +21,11 @@ const NewPayment: React.FC<Props> = ({ farmers }) => {
       <div className="mainBlock">
         <div className='details-body'>
           <AdminNavbar farmers={localFarmers} setFarmers={setLocalFarmers} />
-          <NewPayment farmers={localFarmers} />
+          <ExtractingTable milks={milks} />
         </div>
       </div>
     </div>
   );
 };
 
-export default NewPayment;
+export default ExtractionDash;
