@@ -64,12 +64,21 @@ a {
 	flex-direction: row;
 	align-items: center;
 	gap: 5px;
+	height: 55px;
+	width: 110%;
 	padding: 20px 30px;
 	font-size: 14px;
 	font-weight: 400;
 	text-align: left;
 	transition: all .4s ease;
 	border-left: 5px solid transparent;
+	position: relative;
+}
+.nav_items a:hover{
+	border-left: 5px solid #08762e;
+	background-color: rgb(231, 229, 229);
+	color: #08762e;
+	font-weight: bold;
 }
 .nav_items #link{
 	display: flex;
@@ -78,46 +87,30 @@ a {
 	justify-content: space-between;
 	gap: 5px;
 	padding-right: 10px;
+	margin-bottom: 5px;
 }
-.nav_items #link:hover{
+.nav._items #link:hover{
 	color: #08762e;
+	/* background-color: whitesmoke; */
 }
-
-.nav_items #link a{
-	color: #fff;
-	/* font-weight: bold; */
+.nav_items #link .icnMore{
+	color: #08762e;
+	background-color: rgb(231, 229, 229);
 }
-
-.nav_items .dropdown div {
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-	gap: 5px;
-	padding: 20px 30px;
-	font-size: 14px;
-	font-weight: 400;
-	text-align: left;
-	transition: all .4s ease;
-	border-left: 5px solid transparent;
+.nav_items #link .icnMore:hover{
+	color: #08762e;
+	background-color: #08762e;
 }
 
 .nav_items :hover,
-.nav_items .active {
+.nav_items .active, .nav_items .active a{
 	font-weight: bold;
 	background: #e6e7ea;
-	border-left: 7px solid #08762e;
-	border-top: .3px solid #08762e;
 	cursor: pointer;
+	color: #08762e!important;
 }
-.nav_items .notActive {
-	font-weight: bold;
-	background: #e6e7ea;
-	border-top: 0.1px solid #08762e; 
-	border-left: 15px solid #08762e;
-	color: #08762e;
-}
-.nav_items .notActive:hover{
-	cursor: pointer;
+.nav_items .active, .nav_items .active a{
+	border-left: 4px solid #08762e;
 }
 
 .content {
