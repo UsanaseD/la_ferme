@@ -45,7 +45,7 @@ const NewPayment: React.FC<Props> = ({ farmers, setFarmers }) => {
 
   return (
     <div className='data'>
-      <p>Lorem </p>
+      <p>Lorem</p>
       {/* <div className="form-content">
         <form onSubmit={handleFormSubmit}>
           <div className="names">
