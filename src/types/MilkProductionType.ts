@@ -3,6 +3,8 @@ export type Milk = {
   id: number;
   dateProd: string;
   quantity: number;
+  price: number;
+  extractTime: string;
   description: string | null;
 };
 

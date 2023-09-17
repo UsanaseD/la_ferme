@@ -38,8 +38,13 @@ a {
 	left: 0;
 	width: 17vw;
 	height: 100vh;
-	background-image: url("./assets/banner-bg.png");
-	background-color: #08762e;
+	background-image: url("./assets/background-clr-2.jpg");
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: center;
+	background-size: cover;
+	background: linear-gradient(rgba(8, 118, 46, 0.3), rgba(8, 118, 46, 0.7)), url("./assets/background-clr-2.jpg");
+	/* background-color: #08762e; */
 	opacity: 1;
 	transform: translateX(0);
 	transition: all .8s ease;
@@ -59,20 +64,53 @@ a {
 	flex-direction: row;
 	align-items: center;
 	gap: 5px;
+	height: 55px;
+	width: 110%;
 	padding: 20px 30px;
 	font-size: 14px;
 	font-weight: 400;
 	text-align: left;
 	transition: all .4s ease;
 	border-left: 5px solid transparent;
+	position: relative;
+}
+.nav_items a:hover{
+	border-left: 5px solid #08762e;
+	background-color: rgb(231, 229, 229);
+	color: #08762e;
+	font-weight: bold;
+}
+.nav_items #link{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	gap: 5px;
+	padding-right: 10px;
+	margin-bottom: 5px;
+}
+.nav._items #link:hover{
+	color: #08762e;
+	/* background-color: whitesmoke; */
+}
+.nav_items #link .icnMore{
+	color: #08762e;
+	background-color: rgb(231, 229, 229);
+}
+.nav_items #link .icnMore:hover{
+	color: #08762e;
+	background-color: #08762e;
 }
 
-.nav_items a:hover,
-.nav_items a.active {
+.nav_items :hover,
+.nav_items .active, .nav_items .active a{
 	font-weight: bold;
 	background: #e6e7ea;
-	border-left: 7px solid #08762e;
-	color: #08762e;
+	cursor: pointer;
+	color: #08762e!important;
+}
+.nav_items .active, .nav_items .active a{
+	border-left: 4px solid #08762e;
 }
 
 .content {
@@ -238,7 +276,8 @@ table {
 	border-radius: 10px;
 	border-radius: 5px;
 	overflow: auto;
-	color: rgb(90, 90, 90);;
+	color: rgb(90, 90, 90);
+	font-size: 13px;
 }
 table thead th {
 	padding: 10px 10px;
@@ -375,29 +414,31 @@ table .res-head {
 	width: 50%;
 }
 .data .form-content form .names div label{
-	font-weight: 700;
+	font-weight: 500;
 	color: #9c9c9c;
+	font-size: 13px;
 }
 .data .form-content form .names input{
-	border: 3px solid rgb(83, 83, 86);
+	border: 1px solid rgb(83, 83, 86);
 	width: 100%;
 	padding: 8px 10px;
 	border-radius: 2px;
 }
 .data .form-content form .names input:focus{
-	border: 3px solid #08762e;
+	border: 1px solid #08762e;
 	outline: none;
 }
 .data .form-content form .amount{
 	display: flex;
 	flex-direction: row;
 	align-items: center;
+	justify-content: space-between;
 	gap: 20px;
 	width: 100%;
 	padding-bottom: 15px;
 }
 .data .form-content form .amount .amountIpt{
-	width: 40%;
+	width: 20%;
 }
 .data .form-content form .amount .amountIpt input{
 	width: 100%;
@@ -407,7 +448,7 @@ table .res-head {
 	color: #9c9c9c;
 }
 .data .form-content form .amount div .amountIpt{
-	border: 3px solid rgb(83, 83, 86);
+	border: 1px solid rgb(83, 83, 86);
 	padding: 8px 10px;
 	border-radius: 2px;
 }
@@ -416,11 +457,18 @@ table .res-head {
 	outline: none;
 }
 .data .form-content form .amount .casual{
-	width: 50%;
+	width: 30%;
 	padding: 8px 10px;
 }
+.data .form-content form .amount .all-payTime {
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+}
 .data .form-content form .amount .payTime{
-	width: 20%;
+	/* width: 20%; */
 }
 
 .data .form-content form .amount .payTime label{
@@ -428,7 +476,7 @@ table .res-head {
 	color: #9c9c9c;
 }
 .data .form-content form .amount .payTime input{
-	border: 3px solid #08762e;
+	border: 1px solid #08762e;
 	padding: 4px 35px;
 }
 .data .form-content form .amount .payTime input:hover{
@@ -530,8 +578,8 @@ table .res-head {
 	flex-direction: row;
 	align-items: center;
 	justify-content: center;
-	width: 15rem;
-	padding: 5px 0;
+	width: 10rem;
+	padding: 5px 5px;
 	border: .5px solid #08762e;
 	background-color: #fff;
 	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
@@ -576,12 +624,28 @@ table .res-head {
 	display: flex;
 	flex-direction: row;
 	align-items: flex-start;
-	/* justify-content: space-between; */
 	gap: 20px;
 	margin-bottom: 20px;
+	font-size: 13px;
 }
 .data .form-content form .milkForm .exDate, .quantity{
-	width: 25%;
+	width: 20%;
+}
+.data .form-content form .milkForm .price{
+	width: 20%;
+}
+.data .form-content form .milkForm .time{
+	width: 15%;
+}
+.data .form-content form .milkForm .time .extractTime{
+	width: 100%;
+	padding: 12px 3px;
+	border: 1px solid rgb(83, 83, 86);
+	outline: none;
+	border-radius: 3px;
+}
+.data .form-content form .milkForm .time .extractTime option{
+	border: 3px solid red;
 }
 .data .form-content form .milkForm .descrpt{
 	width: 75%;
@@ -594,7 +658,7 @@ table .res-head {
 	color: #9c9c9c;
 }
 .data .form-content form .milkForm input, textarea{
-	border: 3px solid rgb(83, 83, 86);
+	border: 1px solid rgb(83, 83, 86);
 	width: 100%;
 	padding: 8px 10px;
 	border-radius: 2px;
