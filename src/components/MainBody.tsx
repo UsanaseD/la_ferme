@@ -17,7 +17,7 @@ const SalaryPaymentList: React.FC = () => {
   const [isDiv1Visiblescd, setDiv1Visiblescd] = useState(false);
 
   useEffect(() => {
-    const loggedInStatus = localStorage.getItem('loggedInUser'); 
+    const loggedInStatus = localStorage.getItem('loggedInUser');
     if (!loggedInStatus) {
       navigate("/");
     }
