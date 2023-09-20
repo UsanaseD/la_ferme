@@ -4,7 +4,7 @@ import './App.css';
 import LoginForm from './routes/LoginForm';
 import Dashboard from './routes/Dashboard';
 import NewPayment from './routes/NewPayment';
-import ExtractionDash from './routes/ExtractionDash';
+import ExtractionDash from './routes/ExtractionDash'; 
 import NewExtraction from './routes/NewExtraction';
 import { farmers, milks } from "./utils/database"; 
 

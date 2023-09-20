@@ -18,7 +18,7 @@ const LoginForm = () => {
     let token = '';
     for (let i = 0; i < 10; i++) {
       const randomIndex = Math.floor(Math.random() * characters.length);
-      token += characters[randomIndex];
+      token += characters[randomIndex]; 
     }
     return token;
   }

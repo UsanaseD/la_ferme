@@ -17,14 +17,14 @@ const SalaryPaymentList: React.FC = () => {
   const [isDiv1Visiblescd, setDiv1Visiblescd] = useState(false);
 
   useEffect(() => {
-    const loggedInStatus = localStorage.getItem('loggedInUser');
+    const loggedInStatus = localStorage.getItem('loggedInUser'); 
     if (!loggedInStatus) {
       navigate("/");
     }
   }, []);
 
   useEffect(() => {
-    document.title = "Dashboard | XFarmer";
+    document.title = "Dashboard | La Farmer";
   }, [location]);
 
   const [activeTab, setActiveTab] = useState(1);
