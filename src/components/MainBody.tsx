@@ -24,7 +24,7 @@ const SalaryPaymentList: React.FC = () => {
   }, []);
 
   useEffect(() => {
-    document.title = "Dashboard | XFarmer";
+    document.title = "Dashboard | La Farmer";
   }, [location]);
 
   const [activeTab, setActiveTab] = useState(1);
