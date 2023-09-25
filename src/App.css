@@ -38,13 +38,13 @@ a {
 	left: 0;
 	width: 17vw;
 	height: 100vh;
-	background-image: url("./assets/background-clr-2.jpg");
+	background-image: url("./assets/back-mousse.jpg");
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	background-position: center;
 	background-size: cover;
-	background: linear-gradient(rgba(8, 118, 46, 0.3), rgba(8, 118, 46, 0.7)), url("./assets/background-clr-2.jpg");
-	/* background-color: #08762e; */
+	/* background: linear-gradient(rgba(8, 118, 46, 0.3), rgba(8, 118, 46, 0.7)), url("./assets/back-mousse.jpg"); */
+	background-color: #08762e;
 	opacity: 1;
 	transform: translateX(0);
 	transition: all .8s ease;
@@ -196,6 +196,8 @@ a {
 	align-items: center;
 	width: 100%;
 	margin-bottom: 20px;
+	border: 0;
+	background-color: transparent;
 }
 .card .user-card{
 	display: flex;
